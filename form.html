@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Creation</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return alert_msg()">
+ Name: <input type="text" id="name"><br><br>
+ Gender:
+<input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+    <br><br>
+Email: <input type="text" id="email"><br><br>
+Phone Number: <input type="text" id="phone_no"><br><br>
+Password: <input type="password" id="password"><br><br>
+
+<input type="submit" value="Register">
+</form>
+
+<p id="demo">Welcome</p>
+<button onclick="ChangeText()">Change Text</button><br><br>
+
+<script>
+function alert_msg() {
+if (document.getElementById("name").value == "") {
+alert("Enter your Name");
+return false;
+}
+let em = document.getElementById("email").value;
+let emailPattern = /^[^]+@[^]+\.[a-z]{2,3}$/;
+
+if (em == "" || !em.match(emailPattern)) {
+alert("Your Email is incorrect");
+return false;
+}
+let mobile = document.getElementById("phone_no").value;
+let mobilePattern = /^(?:\+91|91|0)?[6-9]\d{9}$/;
+
+if (mobile == "" || !mobile.match(mobilePattern)) {
+alert("Enter a valid mobile number");
+return false;
+}
+
+let pass = document.getElementById("password").value;
+
+if (pass == "" || pass.length != 6) {
+alert("Password must be exactly 6 characters");
+return false;
+}
+alert("Registration Successful!!");
+return true;
+}
+
+function ChangeText() {
+    document.getElementById("demo").style.color = "red";
+    document.getElementById("demo").style.fontSize = "30px";
+    document.getElementById("demo").innerHTML = "Welcome to Computer Technology";
+}
+</script>
+
+</body>
+</html>
