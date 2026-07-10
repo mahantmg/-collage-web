@@ -1,65 +1,111 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Form Creation</title>
-</head>
-<body>
+    <head>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color:aqua;
+                background-image:url("E:/webprogramming/images.jpeg");
 
-<h2>Registration Form</h2>
+            }
+            .container{
+                width:450px;
+                margin: 40px auto ;
+                background: white;
+                padding:30px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px royalblue;
 
-<form onsubmit="return alert_msg()">
- Name: <input type="text" id="name"><br><br>
- Gender:
-<input type="radio" name="gender" value="male"> Male
-<input type="radio" name="gender" value="female"> Female
-    <br><br>
-Email: <input type="text" id="email"><br><br>
-Phone Number: <input type="text" id="phone_no"><br><br>
-Password: <input type="password" id="password"><br><br>
+            }
+            h2{
+                text-align: center;
+                color:cadetblue;
+            }
+            .input{
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                border: 1px blanchedalmond;
+                border-radius: 5px;
+                box-sizing: border-box;
 
-<input type="submit" value="Register">
-</form>
+            }
+            input[type=radio]{
+                width: auto;
+            }
+            button{
+                width: 100%;
+                padding: 12px;
+                background: green;
+                color:beige;
+                border: none;
+                font-size: 18px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+             button:hover{
+                background:darkgreen;
+            }
 
-<p id="demo">Welcome</p>
-<button onclick="ChangeText()">Change Text</button><br><br>
+        </style>
+        <body>
+            <div class="container">
+        <h2> CAR REGISTRATION FORM </h2>
 
-<script>
-function alert_msg() {
-if (document.getElementById("name").value == "") {
-alert("Enter your Name");
-return false;
-}
-let em = document.getElementById("email").value;
-let emailPattern = /^[^]+@[^]+\.[a-z]{2,3}$/;
-
-if (em == "" || !em.match(emailPattern)) {
-alert("Your Email is incorrect");
-return false;
-}
-let mobile = document.getElementById("phone_no").value;
-let mobilePattern = /^(?:\+91|91|0)?[6-9]\d{9}$/;
-
-if (mobile == "" || !mobile.match(mobilePattern)) {
-alert("Enter a valid mobile number");
-return false;
-}
-
-let pass = document.getElementById("password").value;
-
-if (pass == "" || pass.length != 6) {
-alert("Password must be exactly 6 characters");
-return false;
-}
-alert("Registration Successful!!");
-return true;
-}
-
-function ChangeText() {
-    document.getElementById("demo").style.color = "red";
-    document.getElementById("demo").style.fontSize = "30px";
-    document.getElementById("demo").innerHTML = "Welcome to Computer Technology";
-}
-</script>
-
-</body>
+        <form onsubmit="return alert_msg()">
+         Name: <input type="text" id="name"><br><br>
+         Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+            <br><br>
+        Email: <input type="text" id="email"><br><br>
+        Phone Number: <input type="text" id="phone_no"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        
+        <input type="submit" value="Register">
+        </form>
+        
+        <p id="demo">Welcome</p>
+        <button onclick="ChangeText()">Change Text</button><br><br>
+        
+        <script>
+        function alert_msg() {
+        if (document.getElementById("name").value == "") {
+        alert("Enter your Name");
+        return false;
+        }
+        let em = document.getElementById("email").value;
+        let emailPattern = /^[^]+@[^]+\.[a-z]{2,3}$/;
+        
+        if (em == "" || !em.match(emailPattern)) {
+        alert("Your Email is incorrect");
+        return false;
+        }
+        let mobile = document.getElementById("phone_no").value;
+        let mobilePattern = /^(?:\+91|91|0)?[6-9]\d{9}$/;
+        
+        if (mobile == "" || !mobile.match(mobilePattern)) {
+        alert("Enter a valid mobile number");
+        return false;
+        }
+        
+        let pass = document.getElementById("password").value;
+        
+        if (pass == "" || pass.length != 6) {
+        alert("Password must be exactly 6 characters");
+        return false;
+        }
+        alert("Registration Successful!!");
+        return true;
+        }
+        
+        function ChangeText() {
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.fontSize = "30px";
+            document.getElementById("demo").innerHTML = " welcome to shri vishnu auto care";
+        }
+     
+        </script>   </div></body>
+        
+    </head>
 </html>
